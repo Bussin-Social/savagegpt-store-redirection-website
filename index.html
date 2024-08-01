@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        const userAgent = navigator.userAgent;
+        const isIphone = /iPhone/.test(userAgent);
+        const isIpad = /iPad/.test(userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        const isAndroid = /Android/.test(userAgent);
+        const isMac = /Macintosh/.test(userAgent) && !isIpad;
+        const isWindows = /Windows/.test(userAgent);
+        const playStoreLink = "https://play.google.com/store/apps/details?id=com.savagegpt.savagegpt";
+        const appStoreLink = "https://apps.apple.com/us/app/savagegpt-roast-your-friends/id6575385957";
+
+        if (isIphone || isIpad || isMac) {
+            window.location.href = appStoreLink;
+        } else if (isAndroid || isWindows) {
+            window.location.href = playStoreLink;
+        } else {
+            window.location.href = playStoreLink;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Redirecting to the store...</h1>
+</body>
+
+</html>
